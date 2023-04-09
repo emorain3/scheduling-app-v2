@@ -37,7 +37,7 @@ class ModalAppointment extends Component {
                                 </p> 
                                 <span class="column is-two-fifths"> 
                                     <p> Mon, April 10, 2023</p> 
-                                    <p> {this.props.time} - {parseInt(this.props.time.substring(0,2)) == 12 ? 1 : parseInt(this.props.time.substring(0,2)) + 1} {parseInt(this.props.time.substring(0,2)) > 11 || (this.props.time.slice(-2) == "pm") ? "pm" : "am"} </p>  
+                                    <p> {this.props.time} - {parseInt(this.props.time.substring(0,2)) === 12 ? 1 : parseInt(this.props.time.substring(0,2)) + 1} {parseInt(this.props.time.substring(0,2)) > 11 || (this.props.time.slice(-2) === "pm") ? "pm" : "am"} </p>  
                                     <p class="is-clickable" onClick={this.props.make_modal_invisible}>Edit timeslot <i class="fas fa-pencil is-small  has-text-danger"></i> </p> 
                                 </span>
                                 
