@@ -32,7 +32,7 @@ class TimeSlot extends Component {
     ////  UTILITY FUNCTIONS  ////
 
         make_modal_invisible = () => {
-            this.setState({modal_visibility: "modal", tile_state: "tile is-child box"})
+            this.setState({modal_visibility: "modal"})
         }
         
         make_modal_visible = () => {
@@ -40,7 +40,11 @@ class TimeSlot extends Component {
         }
 
         set_tile_red = () => {
-            this.setState({tile_state: "tile is-child notification is-danger is-light"})
+            this.setState({tile_state: "tile is-child is-danger is-light"})
+        }
+
+        set_tile_initial = () => {
+            this.setState({tile_state: "tile is-child box"})
         }
 
         on_tile_select = () => {
@@ -63,6 +67,7 @@ class TimeSlot extends Component {
                     modal_visibility={this.state.modal_visibility}
                     make_modal_invisible={this.make_modal_invisible}
                     make_modal_visible={this.make_modal_visible}
+                    set_tile_initial={this.set_tile_initial}
                     on_tile_select={this.on_tile_select}
                     time={this.props.time}
                 />

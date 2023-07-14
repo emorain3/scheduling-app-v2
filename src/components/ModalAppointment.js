@@ -6,7 +6,7 @@ let Padding = styled.div`
     padding-bottom: 2vw;
 `
 
-
+const initialState = {name: '', number: '', emails: '', bookingNotes:''}
 
 
 class ModalAppointment extends Component {
@@ -17,6 +17,10 @@ class ModalAppointment extends Component {
         emails: '',
         bookingNotes:'',
       }
+
+    resetModalValues = () => {
+        this.setState(initialState);
+    }
 
     storeValue = (e) => {
         this.setState({[e.target.name]: e.target.value})
@@ -86,7 +90,7 @@ class ModalAppointment extends Component {
 
                         <footer class="modal-card-foot">
                         <button onClick={this.props.on_tile_select} class="button is-danger  is-rounded  is-fullwidth"> Book It </button>
-                        <button onClick={this.props.make_modal_invisible} class="button  is-rounded">Cancel</button>
+                        <button onClick={() => {this.props.make_modal_invisible(); this.props.set_tile_initial(); this.resetModalValues()}} class="button  is-rounded">Cancel</button>
                         </footer>
                     </div>
                 </div>
