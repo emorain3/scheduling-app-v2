@@ -32,7 +32,7 @@ class TimeSlot extends Component {
     ////  UTILITY FUNCTIONS  ////
 
         make_modal_invisible = () => {
-            this.setState({modal_visibility: "modal"})
+            this.setState({modal_visibility: "modal", tile_state: "tile is-child box"})
         }
         
         make_modal_visible = () => {

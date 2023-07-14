@@ -58,7 +58,7 @@ class ModalAppointment extends Component {
                             <div class="field">
                                 <label class="label"> Phone Number </label>
                                 <div class="control">
-                                    <input onchange={this.storeValue} class="input" type="tel" name="number" value={number} placeholder="e.g. 999-999-999"/>
+                                    <input onChange={this.storeValue} class="input" type="tel" name="number" value={number} placeholder="e.g. 999-999-999"/>
                                 </div>
                             </div>
 
@@ -67,7 +67,7 @@ class ModalAppointment extends Component {
                                     <div class="columns is-gapless">
                                         <div class="column is-four-fifth">
                                             <div class="control">
-                                                <input onchange={this.storeValue} class="input" type="email" name="emails" value={emails}/>
+                                                <input onChange={this.storeValue} class="input" type="email" name="emails" value={emails}/>
                                             </div>
                                         </div>  
                                         <span class="column is-one-fifth" ><button class="button"> Add Guests</button> </span>
@@ -78,7 +78,7 @@ class ModalAppointment extends Component {
                             <div class="field">
                                 <label class="label"> Notes for booking </label>
                                 <div class="control">
-                                    <textarea onchange={this.storeValue} class="textarea" type="tel" name="bookingNotes" value={bookingNotes} placeholder="optional"> </textarea>
+                                    <textarea onChange={this.storeValue} class="textarea" type="tel" name="bookingNotes" value={bookingNotes} placeholder="optional"> </textarea>
                                 </div>
                             </div>
 
