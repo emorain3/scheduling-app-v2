@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import 'bulma/css/bulma.min.css';
 import TimeSlotColumn from './components/TimeSlotColumn'
 import { createStore } from "redux";
 import { Provider } from "react-redux";
@@ -38,6 +39,13 @@ const store = createStore(timeWindowReducer);
 ////////////////////////////////
 
 function App() {
+
+  //////// CONSTANTS
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const currDate = new Date().toLocaleDateString(undefined, options);
+  // const currTime = new Date().toLocaleTimeString();
+  
+
   return (
     <PageContainer className="App">
         <Provider store={store}>
@@ -45,12 +53,12 @@ function App() {
             Single-Page Appointment Schdeuling Front-End
           </h1>
           <h1 class="subtitle is-5">
-            Monday, April 10, 2023
+            {currDate} 
           </h1>
             
-          <ScheduleContainer>
+          {/* <ScheduleContainer> */}
             <TimeSlotColumn/>  
-          </ScheduleContainer>
+          {/* </ScheduleContainer> */}
         </Provider>
           
         

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ModalAppointment from './ModalAppointment';
 import styled from 'styled-components';
-
-
+/////////////////////////////////////////////////////////          DEMO FACTS          /////////////////////////////////////////////////////////////////////////////////////
+//     Interesting features: The Modal and TimeSlot button are linked. The modal always exists within the dDOM of this project it's invivibility is just changed. 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ///////// STYLING
@@ -39,7 +40,7 @@ class TimeSlot extends Component {
         }
 
         set_tile_red = () => {
-            this.setState({tile_state: "tile is-child notification is-danger"})
+            this.setState({tile_state: "tile is-child notification is-danger is-light"})
         }
 
         on_tile_select = () => {
@@ -52,11 +53,11 @@ class TimeSlot extends Component {
         return (
             <div>
 
-                <ClickableTile>
-                    <div onClick={this.make_modal_visible} class={this.state.tile_state}>
-                        <p class="title"> {this.props.time} </p>
-                    </div>
-                </ClickableTile>
+                <button
+                    onClick={this.make_modal_visible} 
+                    className={`button ${this.state.tile_state} is-fullwidth is-large is-responsive`}>
+                    {this.props.time} 
+                </button>
                 
                 <ModalAppointment
                     modal_visibility={this.state.modal_visibility}
