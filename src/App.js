@@ -50,7 +50,7 @@ function App() {
     <PageContainer className="App">
         <Provider store={store}>
           <h1 class="subtitle is-2">
-            Single-Page Appointment Schdeuling Front-End
+            Single-Page Time Slot Reservation Demo (Front-End Only)
           </h1>
           <h1 class="subtitle is-5">
             {currDate} 
