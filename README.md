@@ -1,4 +1,4 @@
-# Sample UI of a time slot booking component
+# React-Redux Demo: Time-Slot Reservation UI
 
 ### Installing
  - No installation required! Web app accessible [here @ https://main--scheduling-ui.netlify.app/](https://main--scheduling-ui.netlify.app/)
