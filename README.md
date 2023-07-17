@@ -11,5 +11,4 @@
 Ecclesia Morain
 
 #### #TODO
-- [BUG] allow typing in ALL text fields
-- [USE CASE] revise init UI to display a calendar of times instead of a single column
+- [USE CASE] Revise init UI to display a calendar of times instead of a single column
