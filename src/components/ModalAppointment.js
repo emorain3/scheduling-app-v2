@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { useSelector } from "react-redux";
+import {connect} from 'react-redux'
+
 
 
 let Padding = styled.div`
@@ -29,6 +32,7 @@ class ModalAppointment extends Component {
 
     render() {
         const {name, number, emails, bookingNotes} = this.state;
+        const date = this.props.dateReducer;
         return (
             <div>
                 <div class= {this.props.modal_visibility}>
@@ -40,7 +44,7 @@ class ModalAppointment extends Component {
                                     <p class="is-size-6"> <span> <i class="fas fa-location-dot"></i> Online Zoom Call </span> </p>
                                 </p> 
                                 <span class="column is-two-fifths"> 
-                                    <p> Mon, April 10, 2023</p> 
+                                    <p> {date} </p> 
                                     <p> {this.props.time} - {parseInt(this.props.time.substring(0,2)) === 12 ? 1 : parseInt(this.props.time.substring(0,2)) + 1} {parseInt(this.props.time.substring(0,2)) > 11 || (this.props.time.slice(-2) === "pm") ? "pm" : "am"} </p>  
                                     <p class="is-clickable" onClick={this.props.make_modal_invisible}>Edit timeslot <i class="fas fa-pencil is-small  has-text-danger"></i> </p> 
                                 </span>
@@ -100,4 +104,11 @@ class ModalAppointment extends Component {
     }
 }
 
-export default ModalAppointment;
+
+const mapStateToProps = state => {
+    return {
+        dateReducer: state.dateReducer
+    }
+}
+
+export default connect(mapStateToProps)(ModalAppointment);
